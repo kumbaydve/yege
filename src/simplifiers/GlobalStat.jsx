@@ -21,7 +21,7 @@ export default function GlobalStat(){
             height: '100%'
         }}>{global_stat_shader}</Shader>
         
-        <Percentage divClassName='!absolute' spanClassName='big'>{stat ?? 0}</Percentage>
+        <Percentage divClassName='!absolute' spanClassName='huge'>{stat ?? 0}</Percentage>
 
     </div>
 }

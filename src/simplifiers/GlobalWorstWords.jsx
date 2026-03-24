@@ -19,7 +19,7 @@ export default function GlobalWorstWords(){
             filter: 'blur(2.2rem)'
         }}></div>
 
-        {worst_list.length && worst_list.map((word) => <Select key={word} size='1.7rem'>{word.slice(2)}</Select>)}
+        {worst_list.length && worst_list.map((word) => <Select key={word} spanClassName='big'>{word.slice(2)}</Select>)}
         
     </div>
 }
