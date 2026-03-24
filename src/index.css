@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scrollbar-width: none;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+  --p: 1.5rem;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.bg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100%;
+  min-height: 100vh;
+  padding: var(--p);
+  background: #080808;
+  overflow: hidden;
+  /* z-index: 0; */
+}
+
+.p{
+  padding: var(--p);
+}
+
+.px{
+  padding: 0 var(--p);
+}
+
+.r{
+  border-radius: 1rem;
+}
+
+.small{
+  font-size: 1.2rem;
+}
+
+.medium{
+  font-size: 1.5rem;
+}
+
+.big{
+  font-size: 3rem;
+}
+
+.abril{
+  font-family: Abril Fatface, serif;
+}

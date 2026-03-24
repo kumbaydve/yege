@@ -1,0 +1,121 @@
+import { pick_save_limit } from "./constants"
+
+export default class PickPraser{
+    constructor(){
+        this.picks = {}
+
+        const local_picks = localStorage.getItem('picks')
+
+        if (local_picks){
+            this.picks = JSON.parse(local_picks)
+        }
+    }
+
+    getWorst(level, worst_picked_limit=10){
+        let got_wrong = []
+
+        if (level){
+            if (!this.picks[level]){
+                return []
+            }
+
+            for (const batch in this.picks[level]){
+                for (const word in this.picks[level][batch]){
+                    const sum = this.picks[level][batch][word][0].reduce((was, e) => was + e)
+
+                    if (sum < this.picks[level][batch][word][0].length){
+                        got_wrong.push([sum, level, batch, word, this.picks[level][batch][word][1]])
+                    }
+                }
+            }
+        }
+        else{
+            for (const level_iter in this.picks){
+                for (const batch in this.picks[level_iter]){
+                    for (const word in this.picks[level_iter][batch]){
+                        const sum = this.picks[level_iter][batch][word][0].reduce((was, e) => was + e)
+        
+                        if (sum < this.picks[level_iter][batch][word][0].length){
+                            got_wrong.push([sum, level_iter, batch, word, this.picks[level_iter][batch][word][1]])
+                        }
+                    }
+                }
+            }
+        }
+
+        got_wrong.sort((a, b) => a[0] - b[0])
+        got_wrong = got_wrong.slice(0, worst_picked_limit)
+        got_wrong.map(e => e.shift())
+
+        return got_wrong
+    }
+
+    getStat(level, batch){
+        let successes = 0
+        let total = 0
+        
+        if (level !== undefined){
+            if (!this.picks[level]){
+                return 0
+            }
+
+            if (batch !== undefined){
+                if (!this.picks[level][batch]){
+                    return 0
+                }
+
+                for (const word in this.picks[level][batch]){
+                    successes += this.picks[level][batch][word][0].reduce((was, e) => was + e)
+
+                    total += this.picks[level][batch][word][0].length
+                }
+            }
+            else{
+                for (const batch in this.picks[level]){
+                    for (const word in this.picks[level][batch]){
+                        successes += this.picks[level][batch][word][0].reduce((was, e) => was + e)
+
+                        total += this.picks[level][batch][word][0].length
+                    }
+                }
+            }
+        }
+        else{
+            for (const level in this.picks){
+                for (const batch in this.picks[level]){
+                    for (const word in this.picks[level][batch]){
+                        successes += this.picks[level][batch][word][0].reduce((was, e) => was + e)
+
+                        total += this.picks[level][batch][word][0].length
+                    }
+                }
+            }
+        }
+
+        return successes / total
+    }
+
+    update(level, batch, word, letter, pick){
+        if (!this.picks[level]){
+            this.picks[level] = {}
+        }
+
+        if (!this.picks[level][batch]){
+            this.picks[level][batch] = {}
+        }
+        
+        if (!this.picks[level][batch][word]){
+            this.picks[level][batch][word] = [[], letter]
+        }
+
+        this.picks[level][batch][word][0].push(pick == letter ? 1 : 0)
+        
+        if (this.picks[level][batch][word][0].length > pick_save_limit){
+            this.picks[level][batch][word][0].shift()
+        }
+    }
+
+    save(){
+        localStorage.setItem('picks', JSON.stringify(this.picks))
+    }
+}
