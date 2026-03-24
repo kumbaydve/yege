@@ -93,7 +93,6 @@ const word_sets = {
 ставле.ик нн
 стекля.ый нн
 стра.ый нн`,
-    'q_q': ''
 }
 
 export default word_sets

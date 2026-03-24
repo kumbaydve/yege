@@ -2,7 +2,7 @@ import BorderLit from "./BorderLit"
 import { Link } from "react-router-dom"
 
 export default function LinkLit({children, to, style, className, inner_style}){
-    return <BorderLit className={'max-w-dvw ' + className} style={{
+    return <BorderLit className={'max-w-dvw select-none ' + className} style={{
         width: '30rem',
         borderRadius: '1rem',
         ...style

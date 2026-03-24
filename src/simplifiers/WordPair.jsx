@@ -8,7 +8,7 @@ export default function WordPair({word, variants, pick, right}){
         common_class += 'text-3xl'
     }
 
-    return <div className="flex flex-wrap justify-center gap-6">
+    return <div className="flex flex-wrap justify-center gap-6 select-none">
         <div
         onClick={() => pick(0)}
         className={common_class}

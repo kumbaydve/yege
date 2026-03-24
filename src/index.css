@@ -67,3 +67,26 @@ html{
 .abril{
   font-family: Abril Fatface, serif;
 }
+
+.lesson-container{
+  max-width: 50rem;
+}
+
+.lesson-container h1{
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.lesson-container h2{
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.lesson-container ul{
+	list-style-type: '⬩';
+	padding-left: 1.5rem;
+}
+
+.lesson-container li{
+	padding-left: 0.5rem;
+}

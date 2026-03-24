@@ -8,7 +8,7 @@ const pages = [
 ]
 
 export default function NavBar({ix}){
-    return <nav className="fixed top-0 w-full flex justify-center gap-10 p-3 z-20"
+    return <nav className="fixed top-0 w-full flex justify-center gap-10 p-3 z-20 select-none"
     style={{
         backdropFilter: 'blur(0.7rem)'
     }}>
