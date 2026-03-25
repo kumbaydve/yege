@@ -9,6 +9,7 @@ import Nil from "./pages/Nil"
 import { useState } from "react"
 import { useEffect } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Settings from "./pages/Settings"
 
 export const MouseContext = createContext([-1, -1])
 
@@ -16,6 +17,12 @@ export default function App(){
   const [mouse_pos, setMousePos] = useState([-1, -1])
 
   useEffect(() => {
+    const local_font_size = localStorage.getItem('font-size')
+
+    if (local_font_size){
+      document.documentElement.style.fontSize = `${local_font_size}rem`
+    }
+
     const handleMouseMove = (event) => {
       setMousePos([event.pageX, event.pageY])
     }
@@ -37,6 +44,7 @@ export default function App(){
         <Route path={`${BASE_URL}/batch`} element={<Batch />} />
         <Route path={`${BASE_URL}/select-theory`} element={<SelectTheory />} />
         <Route path={`${BASE_URL}/theory`} element={<Theory />} />
+        <Route path={`${BASE_URL}/settings`} element={<Settings />} />
 
         <Route path='*' element={<Nil />} />
       </Routes>
