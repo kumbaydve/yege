@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react"
 
-export default function Shader({children, style, uniform, delta = 0.016}){
+export default function Shader({children, style, className, uniform, delta=0.016}){
     const self = useRef(null)
     const time = useRef(0)
     const animation_id = useRef(0)
@@ -110,5 +110,8 @@ export default function Shader({children, style, uniform, delta = 0.016}){
         }
     }, [])
     
-    return <canvas width={400} height={400} ref={self} style={style}></canvas>
+    return <canvas ref={self}
+    width={400} height={400}
+    style={style}
+    className={className}></canvas>
 }

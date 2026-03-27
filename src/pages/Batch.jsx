@@ -62,23 +62,20 @@ const Batch = memo(() => {
         }
     }
 
-    return <div className='bg max-w-dvw'>
-        {
-            ix === -1 ?
-            <span className="font-bold text-white big">...ПОДОЖДИТЕ...</span>
+    return <main className='bg max-w-dvw'>
+        {ix === -1 ?
+        <h1 className="font-bold text-white big">...ПОДОЖДИТЕ...</h1>
+        : (
+            ix === word_parser.current.words.length ?
+            <LevelCompleted />
             :
-            (
-                ix === word_parser.current.words.length ?
-                <LevelCompleted/>
-                :
-                <WordPair
-                word={word_parser.current.pair(ix)[2]}
-                variants={word_parser.current.variants}
-                pick={pick}
-                right={right}/>
-            )
-        }
-    </div>
+            <WordPair
+            word={word_parser.current.pair(ix)[2]}
+            variants={word_parser.current.variants}
+            pick={pick}
+            right={right} />
+        )}
+    </main>
 })
 
 export default Batch

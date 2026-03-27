@@ -12,8 +12,11 @@
 }
 
 html{
-  --p: 1.5rem;
   font-size: 1rem;
+
+  --p: 1.5rem;
+  --gap: 1.5rem;
+  --black: #080808;
 }
 
 #root {
@@ -32,9 +35,13 @@ html{
   min-width: 100%;
   min-height: 100vh;
   padding: var(--p);
-  background: #080808;
+  background: var(--black);
   overflow: hidden;
   z-index: 0;
+}
+
+.grad{
+  background: linear-gradient(135deg, #ffd400 10%, #ff6200 90%);
 }
 
 .p{
@@ -45,8 +52,20 @@ html{
   padding: 0 var(--p);
 }
 
+.gap{
+  gap: var(--gap)
+}
+
 .r{
   border-radius: 1rem;
+}
+
+.abs-fill{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .small{
@@ -66,7 +85,7 @@ html{
 }
 
 .black{
-  background: #080808;
+  background: var(--black);
 }
 
 .abril{
@@ -94,4 +113,5 @@ html{
 
 .lesson-container li{
 	padding-left: 0.5rem;
+  font-size: 1.3rem;
 }

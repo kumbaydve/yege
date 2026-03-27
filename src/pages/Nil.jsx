@@ -1,27 +1,22 @@
 import { memo } from "react";
 import Glare from "../basic/Glare";
+import NavBar from "../simplifiers/NavBar";
 
 const Nil = memo(() => {
-    return <div className="bg">
+    return <main className="bg">
+        <NavBar ix={-1} />
+
         <Glare
         opacity={0.7}
-        spanStyle={{
-            background: `linear-gradient(135deg, #ffd400, #ff6200)`,
-            fontSize: '3rem',
-            fontWeight: '700'
-        }}>
+        spanClassName='huge font-bold grad'>
             ТАКОГО НЕТ
         </Glare>
         <Glare
         blur={0.4}
-        spanStyle={{
-            background: `linear-gradient(135deg, #ffd400, #ff6200)`,
-            fontSize: '1.5rem',
-            fontWeight: '600'
-        }}>
+        spanClassName='medium grad'>
             ИДИТЕ НАЗАД
         </Glare>
-    </div>
+    </main>
 })
 
 export default Nil

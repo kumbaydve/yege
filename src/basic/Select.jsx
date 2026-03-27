@@ -1,11 +1,12 @@
 import Glare from "./Glare"
 
-export default function Select({children, color, spanStyle, spanClassName}){
+export default function Select({children, color, spanStyle, spanClassName, divStyle, divClassName}){
     const word = children[0].split('.')
 
-    return <div className="inline-block z-10">
-        <span className={spanClassName} style={{
-            color: color ?? '#fff',
+    return <div className={"inline-block z-10 " + divClassName} style={divStyle}>
+        <span className={spanClassName}
+        style={{
+            color: color ?? 'white',
             ...spanStyle
         }}>
             {word[0]}
@@ -13,19 +14,15 @@ export default function Select({children, color, spanStyle, spanClassName}){
         
         <Glare
         blur={0.3}
-        divStyle={{
-            margin: '0 0.2rem'
-        }}
-        spanClassName={spanClassName}
-        spanStyle={{
-            background: 'linear-gradient(135deg, #ffd400 10%, #ff6200 90%)',
-            ...spanStyle
-        }}>
+        divClassName='mx-0.5'
+        spanClassName={'grad ' + spanClassName}
+        spanStyle={spanStyle}>
             {children[1].toUpperCase()}
         </Glare>
 
-        <span className={spanClassName} style={{
-            color: color ?? '#fff',
+        <span className={spanClassName}
+        style={{
+            color: color ?? 'white',
             ...spanStyle
         }}>
             {word[1]}

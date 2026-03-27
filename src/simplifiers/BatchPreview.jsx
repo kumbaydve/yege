@@ -10,10 +10,11 @@ export default function BatchPreview({level, batch, word}){
     const split_ix = word.lastIndexOf(' ')
 
     return <LinkLit to={`${BASE_URL}/batch?level=${level}&batch=${batch}`}>
-        {/* <span className="font-bold text-white big">{batch + 1}. {word.split(' ')[0].replace('.', word.split(' ')[1]).toUpperCase()}</span> */}
-        <span className="font-bold text-white big">{batch + 1}. {word.slice(0, split_ix).replace('.', word.slice(split_ix + 1)).toUpperCase()}</span>
+        <h1 className="font-bold text-white big">
+            {batch + 1}. {word.slice(0, split_ix).replace('.', word.slice(split_ix + 1)).toUpperCase()}
+        </h1>
 
-        <div className="flex items-center w-full mt-4 gap-6">
+        <div className="flex items-center w-full mt-4 gap">
             <StatBar>{stat}</StatBar>
             <Percentage spanClassName='big' blur={0.7} opacity={0.7}>{stat}</Percentage>
         </div>

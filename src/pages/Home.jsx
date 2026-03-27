@@ -5,12 +5,13 @@ import GlobalWorstWords from "../simplifiers/GlobalWorstWords"
 import LevelList from "../simplifiers/LevelList"
 
 const Home = memo(() => {
-    return <div className='bg'>
+    return <main className='bg'>
         <NavBar ix={0} />
+
         <GlobalStat />
         <GlobalWorstWords />
         <LevelList />
-    </div>
+    </main>
 })
 
 export default Home

@@ -8,12 +8,11 @@ const Theory = memo(() => {
 
     const name = params.get('name')
 
-    return <div className="bg text-black text-2xl p"
-    style={{background: 'white'}}>
-        <div className="lesson-container">
+    return <main className="bg text-black p bg-white!">
+        <article className="lesson-container">
             {lessons[name]()}
-        </div>
-    </div>
+        </article>
+    </main>
 })
 
 export default Theory
