@@ -3,14 +3,14 @@ import Select from "../basic/Select";
 import StatBar from "../basic/StatBar";
 import LinkLit from '../basic/LinkLit';
 import PickPraser from "../../utility/pick-parser";
-import BASE_URL from "../../utility/constants";
+import BASE_URL, { level_worst_words_show_limit } from "../../utility/constants";
 
 export default function LevelPreview({children}){
     let words
 
     const pick_parser = new PickPraser()
     const stat = pick_parser.getStat(children)
-    const worst_words = pick_parser.getWorst(children, 3)
+    const worst_words = pick_parser.getWorst(children, level_worst_words_show_limit)
 
     if (worst_words.length !== 0){
         words = worst_words.map((word) => {

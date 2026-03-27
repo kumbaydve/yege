@@ -92,7 +92,7 @@ export default class PickPraser{
             }
         }
 
-        return successes / total
+        return total > 0 ? successes / total : 0
     }
 
     update(level, batch, word, letter, pick){

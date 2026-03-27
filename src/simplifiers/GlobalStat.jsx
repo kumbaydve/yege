@@ -20,7 +20,7 @@ export default function GlobalStat(){
 
         <Percentage divClassName='absolute!'
         spanClassName='huge'>
-            {stat ?? 0}
+            {stat}
         </Percentage>
     </section>
 }
