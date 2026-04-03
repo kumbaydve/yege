@@ -17,11 +17,15 @@ export default function App(){
   const [mouse_pos, setMousePos] = useState([-1, -1])
 
   useEffect(() => {
-    const local_font_size = localStorage.getItem('font-size')
+    let local_font_size = localStorage.getItem('font-size')
 
-    if (local_font_size){
-      document.documentElement.style.fontSize = `${local_font_size}rem`
+    if (!local_font_size){
+      local_font_size = navigator.maxTouchPoints === 0 ? 1 : 0.8
+
+      localStorage.setItem('font-size', local_font_size)
     }
+
+    document.documentElement.style.fontSize = `${local_font_size}rem`
 
     const handleMouseMove = (event) => {
       setMousePos([event.pageX, event.pageY])

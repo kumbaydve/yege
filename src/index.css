@@ -104,6 +104,12 @@ html{
 .lesson-container h2{
 	font-size: 2rem;
 	font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.lesson-container h3{
+	font-size: 1.5rem;
+	font-weight: 500;
 }
 
 .lesson-container ul{
@@ -114,4 +120,9 @@ html{
 .lesson-container li{
 	padding-left: 0.5rem;
   font-size: 1.3rem;
+}
+
+.lesson-container p{
+  font-size: 1.3rem;
+  padding-left: 1.5rem;
 }
