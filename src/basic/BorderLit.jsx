@@ -20,8 +20,9 @@ export default function BorderLit({children, style, className}){
             top: mouse_pos[1] - (self.current ? self.current.getBoundingClientRect().top : 0) - window.scrollY,
             left: mouse_pos[0] - (self.current ? self.current.getBoundingClientRect().left : 0) - window.scrollX,
             width: 'calc(25vh + 25vw)',
+            aspectRatio: 1,
             filter: 'blur(10rem)',
-            aspectRatio: 1
+            willChange: 'top, left'
         }}></div>}
 
         {children}
