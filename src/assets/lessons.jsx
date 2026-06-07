@@ -20,6 +20,7 @@ const lessons = {
     '№22. Приёмы': t22,
     '№25. Фразеологизмы': t25,
     '№27. Сочинение': t27,
+    'Формулы': formulas,
     'Вопросы по математике': questionsMath,
     'Вопросы по русскому': questionsRussian,
 }
@@ -602,6 +603,24 @@ function t27(){
     </>
 }
 
+function formulas(){
+    return <>
+        <h3>Радиус вневписаной окружности, касающейся a</h3>
+        <p>r = S / (p - a)</p>
+        <h3>Тригонометрия</h3>
+        <ul>
+            <li>tg^2 a + 1 = 1 / cos^2 a</li>
+            <li>ctg^2 a + 1 = 1 / sin^2 a</li>
+            <li>tg(a + b) = (tg a + tg b) / (1 - tg a * tg b)</li>
+            <li>ctg(a + b) = (ctg a * ctg b - 1) / (ctg a + ctg b)</li>
+            <li>sin 3a = 3 sin a - 4 sin^3 a</li>
+            <li>cos 3a = 4 cos^3 a - 3 cos a</li>
+            <li>sin a + sin b = 2 sin((a + b) / 2) cos((a - b) / 2)</li>
+            <li>cos a + cos b = 2 cos((a + b) / 2) cos ((a - b) / 2)</li>
+        </ul>
+    </>
+}
+
 function questionsMath(){
     return <>
         <ul>
@@ -615,6 +634,7 @@ function questionsMath(){
             <li>Зачем нужен ! при поределении знаков на числовой прямой?</li>
             <li>Как оформлять пункт Б в тригонометрии? Что нужно отмечать на окружности? Как находить корни неравенствами?</li>
             <li>Что нужно найти для построения графиков параболы и гиперболы?</li>
+            <li>Как обозначается дуга? U?</li>
         </ul>
     </>
 }
