@@ -21,6 +21,7 @@ const lessons = {
     '№25. Фразеологизмы': t25,
     '№27. Сочинение': t27,
     'Формулы': formulas,
+    'Программирование': programming,
     'Вопросы по математике': questionsMath,
     'Вопросы по русскому': questionsRussian,
 }
@@ -617,6 +618,36 @@ function formulas(){
             <li>cos 3a = 4 cos^3 a - 3 cos a</li>
             <li>sin a + sin b = 2 sin((a + b) / 2) cos((a - b) / 2)</li>
             <li>cos a + cos b = 2 cos((a + b) / 2) cos ((a - b) / 2)</li>
+        </ul>
+    </>
+}
+
+function programming(){
+    return <>
+        <h2>Что повторить</h2>
+        <ul>
+            <li>5</li>
+            <li>Разряды числа (например что такое первый разряд)</li>
+            <li>Значащие / ведущие нули</li>
+            <li>14</li>
+            <li>ДБ скан</li>
+            <li>Регулярные выражения. Так они выглядят в LibreOffice: \b[а-яa-z]{3}\b</li>
+        </ul>
+        <h2>За чем следить</h2>
+        <ul>
+            <li>С какими данными ведётся работа. Если в №8 permutations это кортеж, то 'AB' in p не работает</li>
+            <li>Какая кодировка. Возможно нужно открывать так: open('t.txt', encoding='utf-8', errors='ignore'/'replace')</li>
+            <li>В LibreOffice Writer не выделяются сноски!</li>
+            <li>Адрес компьютера не может совпадать с адресом сети</li>
+            <li>Нужно менять all и any когда победитель меняется</li>
+        </ul>
+        <h2>Функции</h2>
+        <ul>
+            <li>from itertools import permutations, product; permutations(a, r=4); product(a, repeat=3)</li>
+            <li>from fnmatch import fnmatch; fnmatch('str', pattern)</li>
+            <li>from re import fullmatch; fullmatch(r'pattern', str)</li>
+            <li>sys.setrecursionlimit</li>
+            <li>sys.set_int_max_str_digits</li>
         </ul>
     </>
 }
